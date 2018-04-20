@@ -12,6 +12,7 @@ public class Box {
     private final int n, length;//number of colors (aka cols.size())
     private final String DNA;//string with DNA code; compressed info of colors
     public int x, y, generationNum;
+    private double blendPercentage;
     
     public Box(int x, int y, int numColors, int length){
         cols = new ArrayList();
@@ -32,6 +33,8 @@ public class Box {
         }
         
         this.DNA = DNA;
+        
+        blendPercentage = blendPercentage(Globals.background);
     }
     
     public Box(int x, int y, String DNA, int length){
@@ -53,6 +56,8 @@ public class Box {
                 )
             );
         }
+        
+        blendPercentage = blendPercentage(Globals.background);
     }
     
     private String getMutatedDNA(){
@@ -87,7 +92,16 @@ public class Box {
         
     }
     
-    public double blendPercentage(Environment e){
+    
+    public double getBlendPercentage(){
+        return blendPercentage;
+    }
+    
+    //public double getBlendPercentage(Environment e){
+    //    return blendPercentage(e);
+    //}
+    
+    private double blendPercentage(Environment e){
         BufferedImage img = e.getImg();
         
         double maxDifference = 255 * length * length;

@@ -19,16 +19,17 @@ public class Component extends JComponent implements ActionListener {
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(Globals.counter == 5){
-            Globals.counter = 0;
+        if(Globals.counter % 2 == 0){
             Globals.advanceGeneration();
-            System.out.println(Globals.boxes.size());
+            System.out.println(Globals.counter + ": " + 
+                Globals.boxes.get(Globals.boxes.size() - 1).getBlendPercentage()
+            );
         }
-        else{
+        Globals.counter++;
+        //else{
             //System.out.println(Globals.counter++);
-            Globals.counter++;
-            repaint();
-        }
+        repaint();
+        //}
     }
     
     @Override

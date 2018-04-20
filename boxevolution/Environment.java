@@ -34,7 +34,7 @@ public class Environment {
                 }
             }
         }
-        else if(type == ENV_SHAPE.FADING_CIRLCE){
+        else if(type == ENV_SHAPE.FADING_CIRCLE){
             
             double sourceX = Globals.frameWidth / 2;
             double sourceY = Globals.frameHeight / 2;

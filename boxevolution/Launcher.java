@@ -16,7 +16,7 @@ public class Launcher {
         Globals.mainFrame = new Frame();
         Globals.gComponent = new Component();
         Globals.boxes = new ArrayList();
-        Globals.background = new Environment(Globals.ENV_SHAPE.FADING_RECT, Color.green, Color.blue);
+        Globals.background = new Environment(Globals.ENV_SHAPE.FADING_RECT, Color.orange, Color.magenta);
         
         for(int i = 0;i < Globals.frameWidth - 100; i+= 105){
             for(int j = 0;j < Globals.frameHeight - 100; j+=105){
